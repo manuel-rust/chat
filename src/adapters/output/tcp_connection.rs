@@ -8,6 +8,12 @@ const SERVER_URL: &str = "http://127.0.0.1:8080";
 /// Adaptador de salida: Implementa conexión HTTP para cliente-servidor
 pub struct HttpConnectionAdapter;
 
+impl Default for HttpConnectionAdapter {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl HttpConnectionAdapter {
     /// Crea un nuevo adaptador HTTP
     pub fn new() -> Self {
@@ -105,8 +111,8 @@ fn handle_get_messages(
     // Parsear parámetros de query: ?count=N
     let count = if let Some(query_start) = url.find('?') {
         let query = &url[query_start + 1..];
-        if query.starts_with("count=") {
-            query[6..].parse::<usize>().unwrap_or(10)
+        if let Some(stripped) = query.strip_prefix("count=") {
+            stripped.parse::<usize>().unwrap_or(10)
         } else {
             10
         }

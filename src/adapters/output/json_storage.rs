@@ -71,7 +71,7 @@ impl MessageStoragePort for JsonStorageAdapter {
     fn get_last_messages(&self, count: usize) -> Result<Vec<Message>, String> {
         let messages = self.read_messages()?;
         let len = messages.len();
-        let start = if len > count { len - count } else { 0 };
+        let start = len.saturating_sub(count);
         Ok(messages[start..].to_vec())
     }
 }
