@@ -115,4 +115,5 @@ jobs:
           artifacts: "./artifacts/*/*"
           draft: false
           prerelease: false
+          allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
