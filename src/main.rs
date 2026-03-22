@@ -1,4 +1,4 @@
-use agenda::infrastructure::bootstrap;
+use chat::infrastructure::bootstrap;
 
 fn main() {
     bootstrap::run();

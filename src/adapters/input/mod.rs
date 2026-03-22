@@ -1,2 +1,2 @@
-pub mod cli;
-pub mod cli_output;
+pub mod client_cli;
+pub mod server_cli;

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "alice-1774140239",
+    "sender": "alice",
+    "content": "Hello from Alice!",
+    "timestamp": 1774140239
+  },
+  {
+    "id": "bob-1774140239",
+    "sender": "bob",
+    "content": "Hi Alice, this is Bob",
+    "timestamp": 1774140239
+  },
+  {
+    "id": "alice-1774140239",
+    "sender": "alice",
+    "content": "Nice to meet you!",
+    "timestamp": 1774140239
+  },
+  {
+    "id": "charlie-1774143625",
+    "sender": "charlie",
+    "content": "Hello from Charlie",
+    "timestamp": 1774143625
+  }
+]

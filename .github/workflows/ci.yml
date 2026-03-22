@@ -66,5 +66,5 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v7.0.0
         with:
-          name: agenda-linux
-          path: target/release/agenda
+          name: chat-linux
+          path: target/release/chat

@@ -1,1 +1,1 @@
-pub mod path_analyzer;
+pub mod chat_service;

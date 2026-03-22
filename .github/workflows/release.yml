@@ -57,18 +57,18 @@ jobs:
         if: matrix.os != 'windows-latest'
         run: |
           mkdir -p release
-          cp target/${{ matrix.target }}/release/agenda ./release/agenda-${{ matrix.suffix }}
+          cp target/${{ matrix.target }}/release/chat ./release/chat-${{ matrix.suffix }}
       
       - name: Create artifact (Windows)
         if: matrix.os == 'windows-latest'
         run: |
           mkdir release
-          copy target\${{ matrix.target }}\release\agenda.exe .\release\agenda-${{ matrix.suffix }}.exe
+          copy target\${{ matrix.target }}\release\chat.exe .\release\chat-${{ matrix.suffix }}.exe
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v7.0.0
         with:
-          name: agenda-${{ matrix.suffix }}
+          name: chat-${{ matrix.suffix }}
           path: release/
   
   publish-release:
@@ -100,7 +100,7 @@ jobs:
           tag: v${{ steps.version.outputs.version }}
           name: Release v${{ steps.version.outputs.version }}
           body: |
-            ## Agenda v${{ steps.version.outputs.version }}
+            ## Chat v${{ steps.version.outputs.version }}
             
             Analizador de rutas con arquitectura hexagonal en Rust.
             
@@ -109,9 +109,9 @@ jobs:
             - Compilado en múltiples plataformas
             
             ### Descargas
-            - **Linux**: `agenda-linux`
-            - **Windows**: `agenda-windows.exe`
-            - **macOS**: `agenda-macos`
+            - **Linux**: `chat-linux`
+            - **Windows**: `chat-windows.exe`
+            - **macOS**: `chat-macos`
           artifacts: "./artifacts/*/*"
           draft: false
           prerelease: false

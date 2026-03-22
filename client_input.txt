@@ -1,0 +1,5 @@
+/send alice "Hello from Alice!"
+/send bob "Hi Alice, this is Bob"
+/send alice "Nice to meet you!"
+/fetch 5
+/exit
